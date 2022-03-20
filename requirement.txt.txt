@@ -1,0 +1,7 @@
+To run this two projects following requirements are needed.
+1. cv2
+2. numpy
+3. matplotlib.pyplot
+4. math
+5. tqdm
+6. os
