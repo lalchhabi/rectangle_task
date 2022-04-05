@@ -33,14 +33,13 @@ for cnt in contours:
     box = np.int0(box)
     print(box)
     cv2.drawContours(image,[box],-1,(0,0,255),2)
-  
-#         width, height = 300,100
-#         pts1 = np.float32(b)
-#         pts2 = np.float32([[0,0], [width,0],[0,height],[width,height]])
-#         matrix = cv2.getPerspectiveTransform(pts1,pts2)
-#         ouput = cv2.warpPerspective(image,matrix,(width,height))
-
-
+    for b in box:
+        width, height = 300,100
+        pts1 = np.float32(b)
+        pts2 = np.float32([[0,0], [width,0],[0,height],[width,height]])
+        matrix = cv2.getPerspectiveTransform(pts1,pts2)
+        ouput = cv2.warpPerspective(image,matrix,(width,height))
+#     image = cv2.rotate(src = image, rotateCode = cv2.ROTATE_90_COUNTERCLOCKWISE)
 ##### Displaying the Image
     cv2.imshow("Result",image)
 cv2.waitKey()
